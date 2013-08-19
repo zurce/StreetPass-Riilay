@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res" >
+            <file
+                name="glass"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xxhdpi/glass.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="zurce"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xxhdpi/zurce.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="paypal"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xxhdpi/paypal.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="button"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xxhdpi/button.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="backsymbolic"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xxhdpi/backsymbolic.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="background"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xxhdpi/background.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="gbatemp"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xxhdpi/gbatemp.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="reddit"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xxhdpi/reddit.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="options"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xxhdpi/options.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="streetpass"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xxhdpi/streetpass.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="main"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/menu/main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="ic_launcher"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                name="ic_launcher"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/values/dimens.xml"
+                qualifiers="" >
+                <dimen name="text_long" >150dp
+                </dimen>
+                <dimen name="marginBetween" >75dp
+                </dimen>
+                <dimen name="sizespin" >100dp
+                </dimen>
+                <dimen name="marginSpin" >15dp
+                </dimen>
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="marginTop" >40dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+                <dimen name="text_small" >14dp
+                </dimen>
+                <dimen name="container_size" >400dp
+                </dimen>
+                <dimen name="marginLeft" >15dp
+                </dimen>
+            </file>
+            <file
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string-array name="method_array" >
+                    <item>
+/data/etc/wlan_macaddr0
+                    </item>
+                    <item>
+/data/.nvmac.info
+                    </item>
+                    <item>
+/factory/wifi/.mac.info
+                    </item>
+                    <item>
+/data/etc/wlan_macaddr
+                    </item>
+                    <item>
+BusyBox Method
+                    </item>
+                </string-array>
+
+                <string name="prompt_method" >Select your Method
+                </string>
+                <string name="action_settings" >About
+                </string>
+
+                <string-array name="mac_array" >
+                    <item>
+4E:53:50:4F:4F:40
+                    </item>
+                    <item>
+4E:53:50:4F:4F:41
+                    </item>
+                    <item>
+4E:53:50:4F:4F:42
+                    </item>
+                    <item>
+4E:53:50:4F:4F:43
+                    </item>
+                    <item>
+4E:53:50:4F:4F:44
+                    </item>
+                    <item>
+4E:53:50:4F:4F:45
+                    </item>
+                    <item>
+4E:53:50:4F:4F:46
+                    </item>
+                    <item>
+4E:53:50:4F:4F:47
+                    </item>
+                    <item>
+4E:53:50:4F:4F:48
+                    </item>
+                    <item>
+4E:53:50:4F:4F:49
+                    </item>
+                    <item>
+4E:53:50:4F:4F:4A
+                    </item>
+                    <item>
+4E:53:50:4F:4F:4B
+                    </item>
+                    <item>
+4E:53:50:4F:4F:4C
+                    </item>
+                    <item>
+4E:53:50:4F:4F:4D
+                    </item>
+                    <item>
+4E:53:50:4F:4F:4E
+                    </item>
+                    <item>
+4E:53:50:4F:4F:4F
+                    </item>
+                </string-array>
+
+                <string name="prompt_time" >Select the Cooldown Time
+                </string>
+                <string name="app_name" >StreetPass Riilay
+                </string>
+                <string name="about_name" >About the Developer
+                </string>
+                <string name="prompt_mac" >Select the starting Mac address
+                </string>
+
+                <string-array name="times_array" >
+                    <item>
+1 Minute
+                    </item>
+                    <item>
+2 Minutes
+                    </item>
+                    <item>
+3 Minutes
+                    </item>
+                    <item>
+4 Minutes
+                    </item>
+                </string-array>
+            </file>
+            <file
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/values-sw600dp/dimens.xml"
+                qualifiers="sw600dp" >
+                <dimen name="text_long" >520dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+                <dimen name="sizespin" >100dp
+                </dimen>
+                <dimen name="marginLeft" >40dp
+                </dimen>
+                <dimen name="text_small" >20dp
+                </dimen>
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="marginSpin" >90dp
+                </dimen>
+                <dimen name="marginTop" >50dp
+                </dimen>
+                <dimen name="container_size" >1000dp
+                </dimen>
+                <dimen name="marginBetween" >85dp
+                </dimen>
+            </file>
+            <file
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/values-sw720dp-land/dimens.xml"
+                qualifiers="sw720dp-land" >
+                <dimen name="marginTop" >40dp
+                </dimen>
+                <dimen name="marginSpin" >15dp
+                </dimen>
+                <dimen name="container_size" >1000dp
+                </dimen>
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+                <dimen name="text_long" >150dp
+                </dimen>
+                <dimen name="text_small" >16dp
+                </dimen>
+                <dimen name="marginBetween" >75dp
+                </dimen>
+                <dimen name="sizespin" >200dp
+                </dimen>
+                <dimen name="marginLeft" >15dp
+                </dimen>
+            </file>
+            <file
+                name="activity_main"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="about"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/layout/about.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="ic_launcher"
+                path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi"
+                type="drawable" />
+        </source>
+        <source path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/rs/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/debug/res" />
+    </dataSet>
+
+</merger>

@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/container_size"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="120dp"
+                    tools:context=".MainActivity"
+                    android:background="@drawable/glass"
+                    android:id="@+id/relativeLayout">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_small"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/prompt_time"
+            android:id="@+id/textView"
+            android:layout_alignTop="@+id/spinner"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:layout_marginTop="10dp"
+            android:textColor="#003c18"/>
+
+    <Spinner
+            android:layout_width="@dimen/sizespin"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:entries="@array/times_array"
+            android:prompt="@string/prompt_time"
+            android:layout_marginTop="26dp"
+            android:layout_marginLeft="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView"/>
+
+    <TextView
+                android:layout_width="@dimen/text_long"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/text_small"
+                android:text="@string/prompt_mac"
+                android:id="@+id/textView2"
+                android:textColor="#013c18"
+                android:layout_marginTop="26dp"
+                android:layout_below="@+id/spinner"
+                android:layout_alignLeft="@+id/textView"
+                android:layout_alignBottom="@+id/spinner2"
+                android:layout_toLeftOf="@+id/spinner2"/>
+
+    <Spinner
+                android:layout_width="@dimen/sizespin"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner2"
+                android:entries="@array/mac_array"
+                android:prompt="@string/prompt_mac"
+                android:layout_below="@+id/spinner"
+                android:layout_alignLeft="@+id/spinner"
+                android:layout_marginTop="12dp"/>
+
+        <TextView
+                android:layout_width="@dimen/text_long"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/text_small"
+                android:text="@string/prompt_method"
+                android:id="@+id/textView3"
+                android:textColor="#013c18"
+                android:layout_below="@+id/spinner2"
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_marginTop="30dp"
+                android:layout_alignBottom="@+id/spinner3"
+                android:layout_toLeftOf="@+id/spinner"/>
+
+        <Spinner
+                android:layout_width="@dimen/sizespin"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner3"
+                android:entries="@array/method_array"
+                android:prompt="@string/prompt_method"
+                android:layout_below="@+id/spinner2"
+                android:layout_alignLeft="@+id/spinner2"
+                android:layout_marginTop="12dp"/>
+
+
+
+    </RelativeLayout>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Riilay"
+            android:id="@+id/button1"
+            android:onClick="onTether"
+            android:background="@drawable/button"
+            android:textSize="22dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/relativeLayout"
+            android:textColor="#f6fff5"/>
+
+    <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/imageView2"
+            android:background="@drawable/backsymbolic"
+            android:layout_above="@+id/button1"
+            android:layout_toLeftOf="@+id/textView4"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Press Back Twice to Exit"
+            android:id="@+id/textView4"
+            android:layout_above="@+id/button1"
+            android:layout_centerHorizontal="true"
+            android:textColor="#013c18"/>
+</RelativeLayout>

@@ -1,0 +1,25 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1376801760000 361 587a384d26bd97440179086fc8cd2a43f7e40fcf /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/menu/main.xml
+1376801762000 104538 69ae15fd9ba68b3ffa603678b58de4e03b725c14 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xxhdpi/options.png
+1376801771000 441313 353742419ae684b27d65f2f6e49feac03b87a1b9 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xxhdpi/background.png
+1376801760000 37408 d1cd3dfb8a879f7b4362c33d8af282441b3aed11 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xxhdpi/zurce.png
+1376804035000 5539 b355f2fff5d073da78e532d721941f690ca78422 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/layout/activity_main.xml
+1376801760000 1540 8cd8b19c73513f560503e510dae5e2cfdd7a9f9c /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xxhdpi/button.png
+1376803278000 2978 0575c61977a504e86609f27d8cb26d543b8157f7 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/values/values.xml
+1376801762000 104425 323162326ab4ba467cce2898d267c064c9cc8485 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xxhdpi/glass.png
+1376801760000 665 bded0257fc80c700e52554033904b03fa1c852cb /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/values-sw720dp-land/values.xml
+1376801762000 12911 6cf831eb8cc7b80abcbbac8d2d5fcaacd91b5ba3 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xxhdpi/reddit.png
+1376801760000 5171 8aa0616910a9ddae8ecba2af51ba2610d0510f53 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/layout/about.xml
+1376801760000 5316 c563a2c76235fe3960a9410c261d091f2a8d373d /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xhdpi/ic_launcher.png
+1376801760000 335 9f34a2d3ecf8a7cd5571193433d129085ad7cd7b /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/values-v11/values.xml
+1376801760000 349 83b0e2441f10c4f49bbb81a9ca2b120078e1720e /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/values-v14/values.xml
+1376801760000 3598 6de589b871e77dc4fa674de9939a4140ab0e42c4 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-hdpi/ic_launcher.png
+1376801760000 1933 55f318684e23ccf9da6e0ca399ef7edb1e0f816a /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-mdpi/ic_launcher.png
+1376801760000 9584 8d415c791079f565e55a661de60b79a4c23c8e93 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xxhdpi/ic_launcher.png
+1376801760000 7302 7d2da805a11d415cae104c2bc3943f1779a8705d /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xxhdpi/paypal.png
+1376801760000 1373 0270c530da89b08fe1eeef8007cb09eb19cf1549 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xxhdpi/backsymbolic.png
+1376801760000 79792 e5978c6a34deee189e028c636bd563fd27905992 /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xxhdpi/streetpass.png
+1376801762000 193710 8359a3073b382130a8e9a386dcadba9f2448a99e /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/drawable-xxhdpi/gbatemp.png
+1376803278000 659 0a83785028e6194623a6bd816f0909a412f37adf /home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/build/res/all/debug/values-sw600dp/values.xml

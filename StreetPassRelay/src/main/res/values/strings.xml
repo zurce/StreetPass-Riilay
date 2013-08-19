@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">StreetPass Riilay</string>
+    <string name="about_name">About the Developer</string>
+    <string name="action_settings">About</string>
+    <string name="prompt_time">Select the Cooldown Time</string>
+    <string name="prompt_mac">Select the starting Mac address</string>
+    <string name="prompt_method">Select your Method</string>
+    <string-array name="times_array">
+        <item>1 Minute</item>
+        <item>2 Minutes</item>
+        <item>3 Minutes</item>
+        <item>4 Minutes</item>
+    </string-array>
+
+    <string-array name="method_array">
+        <item>/data/etc/wlan_macaddr0</item>
+        <item>/data/.nvmac.info</item>
+        <item>/factory/wifi/.mac.info</item>
+        <item>/data/etc/wlan_macaddr</item>
+        <item>BusyBox Method</item>
+    </string-array>
+
+    <string-array name="mac_array">
+        <item>4E:53:50:4F:4F:40</item>
+        <item>4E:53:50:4F:4F:41</item>
+        <item>4E:53:50:4F:4F:42</item>
+        <item>4E:53:50:4F:4F:43</item>
+        <item>4E:53:50:4F:4F:44</item>
+        <item>4E:53:50:4F:4F:45</item>
+        <item>4E:53:50:4F:4F:46</item>
+        <item>4E:53:50:4F:4F:47</item>
+        <item>4E:53:50:4F:4F:48</item>
+        <item>4E:53:50:4F:4F:49</item>
+        <item>4E:53:50:4F:4F:4A</item>
+        <item>4E:53:50:4F:4F:4B</item>
+        <item>4E:53:50:4F:4F:4C</item>
+        <item>4E:53:50:4F:4F:4D</item>
+        <item>4E:53:50:4F:4F:4E</item>
+        <item>4E:53:50:4F:4F:4F</item>
+    </string-array>
+
+
+</resources>

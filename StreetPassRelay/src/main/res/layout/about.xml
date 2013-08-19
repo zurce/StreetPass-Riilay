@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+    tools:context=".About">
+
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:background="@drawable/zurce"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignRight="@+id/textView3"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Hi! I'm Zurce"
+                android:id="@+id/textView"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_marginTop="24dp"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="I'm the developer, if you're interested in knowing how this app works check out these link"
+                android:id="@+id/textView2"
+                android:layout_above="@+id/imageButton"
+                android:layout_marginBottom="11dp"
+                android:layout_toLeftOf="@+id/textView5"/>
+
+        <ImageButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/imageButton"
+                android:background="@drawable/gbatemp"
+                android:onClick="goToGBA"
+                android:layout_above="@+id/textView4"
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_marginBottom="11dp"/>
+
+        <ImageButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:id="@+id/imageButton2"
+                android:background="@drawable/reddit"
+                android:onClick="goToReddit"
+                android:layout_below="@+id/imageView"
+                android:layout_toRightOf="@+id/imageButton3"
+                android:layout_marginLeft="17dp"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="And if you like if don't forget to donate"
+                android:id="@+id/textView3"
+                android:layout_below="@+id/textView5"
+                android:layout_alignRight="@+id/textView5"
+                android:layout_marginTop="62dp"/>
+
+    <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:id="@+id/imageButton3"
+            android:background="@drawable/paypal"
+            android:onClick="donatePay"
+            android:layout_marginTop="100dp"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Original Thread on GBATemp"
+            android:id="@+id/textView4"
+            android:layout_alignTop="@+id/textView5"
+            android:layout_alignLeft="@+id/textView2"
+            />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Post on Reddit"
+            android:id="@+id/textView5"
+            android:layout_below="@+id/imageButton2"
+            android:layout_alignLeft="@+id/imageButton2"/>
+
+    <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/imageView2"
+            android:background="@drawable/backsymbolic"
+            android:layout_below="@+id/imageButton3"
+            android:layout_toRightOf="@+id/imageButton"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Press Back to Return "
+            android:id="@+id/textView6"
+            android:layout_below="@+id/imageButton3"
+            android:layout_alignRight="@+id/textView2"
+            android:textColor="#013c18"/>
+
+</RelativeLayout>

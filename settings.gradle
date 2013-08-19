@@ -1,0 +1,1 @@
+include ':StreetPassRelay', ':StreetPassRelay:libs:RootTools2.6'

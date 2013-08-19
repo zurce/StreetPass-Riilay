@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/home/zurce/AndroidStudioProjects/StreetPassRelayProject/StreetPassRelay/src/main/res/values-sw600dp/dimens.xml -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="container_size">1000dp</dimen>
+    <dimen name="marginBetween">85dp</dimen>
+    <dimen name="marginLeft">40dp</dimen>
+    <dimen name="marginSpin">90dp</dimen>
+    <dimen name="marginTop">50dp</dimen>
+    <dimen name="sizespin">100dp</dimen>
+    <dimen name="text_long">520dp</dimen>
+    <dimen name="text_small">20dp</dimen>
+
+</resources>
