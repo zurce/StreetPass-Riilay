@@ -48,10 +48,7 @@ public class MainActivity extends StreetPass {
         if(RootTools.isRootAvailable()){
             if(RootTools.isBusyboxAvailable()){
                 sendToast("Busy Box Found!",false);
-            }else{
-
             }
-        }else{
 
         }
 
@@ -69,7 +66,7 @@ public class MainActivity extends StreetPass {
                         command = new CommandCapture(0, "chmod  777 /data/etc/wlan_macaddr0");
                         break;
                     case 1:
-                        command = new CommandCapture(0, "chmod  644 /data/.nvmac.info");
+                        command = new CommandCapture(0, "chmod  777 /data/.nvmac.info");
                         break;
                     case 2:
                         command = new CommandCapture(0, "chmod  777 /factory/wifi/.mac.info");
@@ -84,13 +81,13 @@ public class MainActivity extends StreetPass {
             try {
                 RootTools.getShell(true).add(command).waitForFinish();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                sendToast(e.getMessage(),false);
             } catch (IOException e) {
                 sendToast(e.getMessage(),false);
             } catch (TimeoutException e) {
-                e.printStackTrace();
+                sendToast(e.getMessage(),false);
             } catch (RootDeniedException e) {
-                e.printStackTrace();
+                sendToast(e.getMessage(),false);
             }
         } else {
             sendToast("Oops, this app needs Root",true);
@@ -144,13 +141,6 @@ public class MainActivity extends StreetPass {
         }
     }
 
-    public void IllMakeYouAnOffer(boolean which){
-        if(which){
-            RootTools.offerBusyBox(this);
-        }else{
-            RootTools.offerSuperUser(this);
-        }
-    }
 
 
     public void busyBoxMethod(){
@@ -223,18 +213,12 @@ public class MainActivity extends StreetPass {
             myTimer.cancel();
             myTimer.purge();
             activate=false;
+            setWifiTetheringEnabled(false);
         }
 
 
     }
 
-    public void offTether(View view){
-        sendToast("Stoping Relay",false);
-        myTimer.cancel();
-        myTimer.purge();
-
-
-    }
 
 
     @Override
@@ -246,6 +230,7 @@ public class MainActivity extends StreetPass {
             if(activate){
                 myTimer.cancel();
                 myTimer.purge();
+                setWifiTetheringEnabled(false);
             }
 
             super.onBackPressed();
