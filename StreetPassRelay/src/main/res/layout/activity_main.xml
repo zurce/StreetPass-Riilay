@@ -23,11 +23,11 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/prompt_time"
             android:id="@+id/textView"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="@dimen/marginStart"
+            android:textColor="#003c18"
             android:layout_alignTop="@+id/spinner"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="@dimen/marginLeft"
-            android:layout_marginTop="10dp"
-            android:textColor="#003c18"/>
+            android:layout_alignParentLeft="true"/>
 
     <Spinner
             android:layout_width="@dimen/sizespin"
@@ -35,7 +35,7 @@
             android:id="@+id/spinner"
             android:entries="@array/times_array"
             android:prompt="@string/prompt_time"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="@dimen/marginTop"
             android:layout_marginLeft="33dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/textView"/>
@@ -48,7 +48,7 @@
                 android:text="@string/prompt_mac"
                 android:id="@+id/textView2"
                 android:textColor="#013c18"
-                android:layout_marginTop="26dp"
+                android:layout_marginTop="@dimen/marginTop"
                 android:layout_below="@+id/spinner"
                 android:layout_alignLeft="@+id/textView"
                 android:layout_alignBottom="@+id/spinner2"
@@ -62,7 +62,7 @@
                 android:prompt="@string/prompt_mac"
                 android:layout_below="@+id/spinner"
                 android:layout_alignLeft="@+id/spinner"
-                android:layout_marginTop="12dp"/>
+                android:layout_marginTop="@dimen/marginTop"/>
 
         <TextView
                 android:layout_width="@dimen/text_long"
@@ -74,7 +74,7 @@
                 android:textColor="#013c18"
                 android:layout_below="@+id/spinner2"
                 android:layout_alignLeft="@+id/textView2"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="@dimen/marginTop"
                 android:layout_alignBottom="@+id/spinner3"
                 android:layout_toLeftOf="@+id/spinner"/>
 
@@ -86,7 +86,7 @@
                 android:prompt="@string/prompt_method"
                 android:layout_below="@+id/spinner2"
                 android:layout_alignLeft="@+id/spinner2"
-                android:layout_marginTop="12dp"/>
+                android:layout_marginTop="@dimen/marginTop"/>
 
 
 
