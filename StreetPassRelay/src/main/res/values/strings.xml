@@ -5,13 +5,24 @@
     <string name="about_name">About the Developer</string>
     <string name="action_settings">About</string>
     <string name="prompt_time">Select the Cooldown Time</string>
-    <string name="prompt_mac">Select the starting Mac address</string>
+    <string name="prompt_mac">Select the starting Mac</string>
     <string name="prompt_method">Select your Method</string>
     <string-array name="times_array">
         <item>1 Minute</item>
         <item>2 Minutes</item>
         <item>3 Minutes</item>
         <item>4 Minutes</item>
+        <item>5 Minute</item>
+        <item>6 Minutes</item>
+        <item>7 Minutes</item>
+        <item>8 Minutes</item>
+        <item>9 Minute</item>
+        <item>10 Minutes</item>
+        <item>11 Minutes</item>
+        <item>12 Minutes</item>
+        <item>13 Minute</item>
+        <item>14 Minutes</item>
+        <item>15 Minutes</item>
     </string-array>
 
     <string-array name="method_array">
@@ -19,6 +30,8 @@
         <item>/data/.nvmac.info</item>
         <item>/factory/wifi/.mac.info</item>
         <item>/data/etc/wlan_macaddr</item>
+        <item>/system/etc/wifi/nvram.txt</item>
+        <item>/data/misc/wifi/config</item>
         <item>BusyBox Method</item>
     </string-array>
 
@@ -39,6 +52,22 @@
         <item>4E:53:50:4F:4F:4D</item>
         <item>4E:53:50:4F:4F:4E</item>
         <item>4E:53:50:4F:4F:4F</item>
+        <item>4E:53:50:4F:4F:50</item>
+        <item>4E:53:50:4F:4F:51</item>
+        <item>4E:53:50:4F:4F:52</item>
+        <item>4E:53:50:4F:4F:53</item>
+        <item>4E:53:50:4F:4F:54</item>
+        <item>4E:53:50:4F:4F:55</item>
+        <item>4E:53:50:4F:4F:56</item>
+        <item>4E:53:50:4F:4F:57</item>
+        <item>4E:53:50:4F:4F:58</item>
+        <item>4E:53:50:4F:4F:59</item>
+        <item>4E:53:50:4F:4F:5A</item>
+        <item>4E:53:50:4F:4F:5B</item>
+        <item>4E:53:50:4F:4F:5C</item>
+        <item>4E:53:50:4F:4F:5D</item>
+        <item>4E:53:50:4F:4F:5E</item>
+        <item>4E:53:50:4F:4F:5F</item>
     </string-array>
 
 

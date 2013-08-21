@@ -23,22 +23,25 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/prompt_time"
             android:id="@+id/textView"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="@dimen/marginStart"
             android:textColor="#003c18"
             android:layout_alignTop="@+id/spinner"
-            android:layout_alignParentLeft="true"/>
+            android:layout_toLeftOf="@+id/spinner"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="@dimen/marginLeft"/>
 
     <Spinner
             android:layout_width="@dimen/sizespin"
             android:layout_height="wrap_content"
             android:id="@+id/spinner"
             android:entries="@array/times_array"
+            android:spinnerMode="dialog"
             android:prompt="@string/prompt_time"
-            android:layout_marginTop="@dimen/marginTop"
-            android:layout_marginLeft="33dp"
+            android:layout_marginTop="20dp"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/textView"/>
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="18dp"
+            />
 
     <TextView
                 android:layout_width="@dimen/text_long"
@@ -48,21 +51,20 @@
                 android:text="@string/prompt_mac"
                 android:id="@+id/textView2"
                 android:textColor="#013c18"
-                android:layout_marginTop="@dimen/marginTop"
                 android:layout_below="@+id/spinner"
                 android:layout_alignLeft="@+id/textView"
-                android:layout_alignBottom="@+id/spinner2"
-                android:layout_toLeftOf="@+id/spinner2"/>
+                android:layout_marginTop="12dp"
+                android:paddingLeft="@dimen/marginLeft"/>
 
     <Spinner
                 android:layout_width="@dimen/sizespin"
                 android:layout_height="wrap_content"
                 android:id="@+id/spinner2"
                 android:entries="@array/mac_array"
+                android:spinnerMode="dialog"
                 android:prompt="@string/prompt_mac"
                 android:layout_below="@+id/spinner"
-                android:layout_alignLeft="@+id/spinner"
-                android:layout_marginTop="@dimen/marginTop"/>
+                android:layout_alignLeft="@+id/spinner"/>
 
         <TextView
                 android:layout_width="@dimen/text_long"
@@ -74,9 +76,8 @@
                 android:textColor="#013c18"
                 android:layout_below="@+id/spinner2"
                 android:layout_alignLeft="@+id/textView2"
-                android:layout_marginTop="@dimen/marginTop"
-                android:layout_alignBottom="@+id/spinner3"
-                android:layout_toLeftOf="@+id/spinner"/>
+                android:layout_marginTop="14dp"
+                android:paddingLeft="@dimen/marginLeft"/>
 
         <Spinner
                 android:layout_width="@dimen/sizespin"
@@ -84,10 +85,30 @@
                 android:id="@+id/spinner3"
                 android:entries="@array/method_array"
                 android:prompt="@string/prompt_method"
+                android:spinnerMode="dialog"
                 android:layout_below="@+id/spinner2"
-                android:layout_alignLeft="@+id/spinner2"
-                android:layout_marginTop="@dimen/marginTop"/>
+                android:layout_alignLeft="@+id/spinner2"/>
 
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="MAC:"
+                android:id="@+id/currentMac"
+                android:textColor="#013c18"
+                android:paddingLeft="@dimen/marginLeft"
+                android:layout_below="@+id/checkBox"
+                android:layout_alignLeft="@+id/textView3"/>
+
+        <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Randomize"
+                android:id="@+id/checkBox"
+                android:checked="false"
+                android:textColor="#013c18"
+                android:layout_below="@+id/spinner3"
+                android:layout_alignLeft="@+id/currentMac"/>
 
 
     </RelativeLayout>

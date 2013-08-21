@@ -1,22 +1,35 @@
 package com.example.streetpassrelay;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import com.stericson.RootTools.RootTools;
 import com.stericson.RootTools.execution.CommandCapture;
 
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Set;
+
 
 
 public class StreetPass extends Activity {
     public int cont=0;
     private FileWriter fw;
+    boolean random;
+    SharedPreferences preferences;
+    ArrayList<Integer> arrayUsed = new ArrayList();
+
 
     public String[] Macs = {"4E:53:50:4F:4F:40","4E:53:50:4F:4F:41","4E:53:50:4F:4F:42","4E:53:50:4F:4F:43","4E:53:50:4F:4F:44",
                             "4E:53:50:4F:4F:45","4E:53:50:4F:4F:46","4E:53:50:4F:4F:47","4E:53:50:4F:4F:48","4E:53:50:4F:4F:49",
@@ -70,6 +83,9 @@ public class StreetPass extends Activity {
     }
 
     public boolean changeMac(int method){
+        if(random){
+            cont = getNewMAC();
+        }
         try{
             switch (method){
                 case 0:
@@ -82,13 +98,19 @@ public class StreetPass extends Activity {
                     fw = new FileWriter("/factory/wifi/.mac.info");
                     break;
                 case 3:
-                    fw = new FileWriter("/data/etc/wlan_macaddr0");
+                    fw = new FileWriter("/data/etc/wlan_macaddr");
                     fw.write(MacsH[cont]);
                     fw.close();
                     return true;
-
+                case 4:
+                    nvtextline();
+                    return true;
+                case 5:
+                    configwifimethod();
+                    return true;
             }
             fw.write(Macs[cont]);
+            arrayUsed.add(cont);
             fw.close();
         }catch(Exception e){
             sendToast(e.getMessage() + " "+method ,false);
@@ -96,6 +118,25 @@ public class StreetPass extends Activity {
         }
 
         return true;
+    }
+
+
+    int getNewMAC(){
+        int cont;
+
+        cont = (int) (Math.random()*80 );
+
+
+        while((arrayUsed.contains(cont))){
+            cont = (int) (Math.random()*80);
+            if(arrayUsed.size()>79){
+                cont=-1;
+                break;
+            }
+        }
+
+
+        return cont;
     }
 
     public void setWifiTetheringEnabled(boolean enable) {
@@ -113,4 +154,84 @@ public class StreetPass extends Activity {
             }
         }
     }
+
+    void nvtextline(){
+        InputStream instream = null;
+        String sfinal="";
+        try {
+           instream = new FileInputStream("/system/etc/wifi/nvram.txt");
+        } catch (Exception ex) {
+            sendToast("file not found",false);
+        }
+        try{
+            if (instream != null) {
+                InputStreamReader inputreader = new InputStreamReader(instream);
+                BufferedReader buffreader = new BufferedReader(inputreader);
+
+                String line;
+
+                do {
+                    line = buffreader.readLine();
+                    try{
+                        String[] s = line.split("=");
+                        if(s[0].equals("macaddr")){
+                            line= "macaddr="+Macs[cont];
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+
+                    sfinal+=line+ "\n";
+                } while (line != null);
+
+                fw = new FileWriter("/system/etc/wifi/nvram.txt");
+                fw.write(sfinal);
+                fw.close();
+            }
+            instream.close();
+        }catch (Exception e){
+            sendToast(e.toString(),false);
+        }
+    }
+
+
+    void configwifimethod(){
+        InputStream instream = null;
+        String sfinal="";
+        try {
+            instream = new FileInputStream("/data/misc/wifi/config");
+        } catch (Exception ex) {
+            sendToast("file not found",false);
+        }
+        try{
+            if (instream != null) {
+                InputStreamReader inputreader = new InputStreamReader(instream);
+                BufferedReader buffreader = new BufferedReader(inputreader);
+
+                String line;
+
+                do {
+                    line = buffreader.readLine();
+                    try{
+                        String[] s = line.split("=");
+                        if(s[0].equals("cur_etheraddr")){
+                            line= "cur_etheraddr="+Macs[cont];
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+
+                    sfinal+=line+ "\n";
+                } while (line != null);
+
+                fw = new FileWriter("/data/misc/wifi/config");
+                fw.write(sfinal);
+                fw.close();
+            }
+            instream.close();
+        }catch (Exception e){
+            sendToast(e.toString(),false);
+        }
+    }
+
 }

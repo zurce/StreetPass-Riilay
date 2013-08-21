@@ -7,6 +7,7 @@
 <dimen name="text_small">20dp</dimen>
 <dimen name="marginLeft">40dp</dimen>
 <dimen name="marginSpin">90dp</dimen>
+<dimen name="marginStart">25dp</dimen>
 <dimen name="marginTop">50dp</dimen>
 <dimen name="marginBetween">85dp</dimen>
 <dimen name="text_long">520dp</dimen>

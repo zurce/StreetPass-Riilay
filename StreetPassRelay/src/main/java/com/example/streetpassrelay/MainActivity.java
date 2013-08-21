@@ -4,24 +4,32 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.wifi.SupplicantState;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.stericson.RootTools.RootTools;
 import com.stericson.RootTools.exceptions.RootDeniedException;
 import com.stericson.RootTools.execution.CommandCapture;
 
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -35,27 +43,97 @@ public class MainActivity extends StreetPass {
     private  boolean activate  = false;
     private WifiManager wifiManager;
     private Timer myTimer;
-    private ConnectivityManager dataManager;
     private int exit=0, method=0;
+    String previousMac;
+    TextView currentMac;
+    Spinner spinner;
+    Spinner spinnerMacs;
+    CheckBox check;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        dataManager  = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-
+        currentMac = (TextView) findViewById(R.id.currentMac);
+        spinner = (Spinner) findViewById(R.id.spinner3);
+        spinnerMacs = (Spinner) findViewById(R.id.spinner2);
         if(RootTools.isRootAvailable()){
-            if(RootTools.isBusyboxAvailable()){
-                sendToast("Busy Box Found!",false);
+        }
+
+
+        try{
+
+            method =  preferences.getInt("method",0);
+
+            spinner.setSelection(method);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        addListenerOnCheckbox();
+        getMac();
+
+    }
+
+    public void getMac(){
+        String[] methods = {"/data/etc/wlan_macaddr0", "/data/.nvmac.info" ,"/factory/wifi/.mac.info","/data/etc/wlan_macaddr","/system/etc/wifi/nvram.txt","/data/misc/wifi/config"};
+        method =0;
+
+        try {
+            previousMac = getStringFromFile(methods[method]);
+            while(previousMac.equals("file not found") && method<5){
+                method++;
+                previousMac = getStringFromFile(methods[method]);
+
             }
 
+            if(previousMac.equals("file not found")){
+                method=6;
+                sendToast("Your Method is BusyBox",false);
+                spinnerMacs.setSelection(6);
+            }else{
+                sendToast("Your Method is:"+ methods[method],false);
+                spinnerMacs.setSelection(method);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
 
     }
 
 
+    public  String convertStreamToString(InputStream is) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        StringBuilder sb = new StringBuilder();
+        String line = null;
+        while ((line = reader.readLine()) != null) {
+            sb.append(line).append("\n");
+        }
+        return sb.toString();
+    }
+
+    public  String getStringFromFile (String filePath) throws Exception {
+        CommandCapture command =  new CommandCapture(0, "chmod 777 "+filePath);
+        String ret ="file not found";
+        if(RootTools.isRootAvailable()){
+            try{
+                RootTools.getShell(true).add(command).waitForFinish();
+                File fl = new File(filePath);
+                FileInputStream fin = new FileInputStream(fl);
+                ret = convertStreamToString(fin);
+                fin.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return ret;
+    }
     public void setPermission(int method){
         CommandCapture command =  new CommandCapture(0, "chmod  777 /data/etc/wlan_macaddr0");
 
@@ -73,21 +151,29 @@ public class MainActivity extends StreetPass {
                         break;
                     case 3:
                          command = new CommandCapture(0,"chmod 777 /data/etc/wlan_macaddr");
+                        break;
+                    case 4:
+                         command = new CommandCapture(0,"chmod 777 /system/etc/wifi/nvram.txt");
+                        break;
+                    case 5:
+                        command = new CommandCapture(0,"/data/misc/wifi/config");
+                        break;
+
                 }
             }catch(Exception e){
-                sendToast(e.getMessage(),false);
+                e.printStackTrace();
             }
 
             try {
                 RootTools.getShell(true).add(command).waitForFinish();
             } catch (InterruptedException e) {
-                sendToast(e.getMessage(),false);
+                e.printStackTrace();
             } catch (IOException e) {
-                sendToast(e.getMessage(),false);
+                e.printStackTrace();
             } catch (TimeoutException e) {
-                sendToast(e.getMessage(),false);
+                e.printStackTrace();
             } catch (RootDeniedException e) {
-                sendToast(e.getMessage(),false);
+                e.printStackTrace();
             }
         } else {
             sendToast("Oops, this app needs Root",true);
@@ -106,7 +192,7 @@ public class MainActivity extends StreetPass {
         public void run() {
             disconectWifi();
 
-            if(method==4){
+            if(method==6){
                 if(RootTools.isBusyboxAvailable()){
                     busyBoxMethod();
                     cont++;
@@ -120,14 +206,13 @@ public class MainActivity extends StreetPass {
                     sendToast("This method doesn't work for you.",true);
 
                 }
-                sendToast("New MAC is:"+ Macs[cont-1],true);
+                currentMac.setText("MAC:"+Macs[cont-1]);
             }
         }
     };
 
         public void disconectWifi(){
         setWifiTetheringEnabled(false);
-        sendToast("",false);
         try{
             Thread.sleep(3000);
         }catch (Exception e){
@@ -145,17 +230,41 @@ public class MainActivity extends StreetPass {
 
     public void busyBoxMethod(){
         if(RootTools.isBusyboxAvailable()){
-           CommandCapture commandCapture = new CommandCapture(0, "busybox ifconfig wlan0 hw ether "+Macs[cont]);
+            if(random){
+                cont = getNewMAC();
+            }
+            CommandCapture commandCapture = new CommandCapture(0, "busybox ifconfig wlan0 hw ether "+Macs[cont]);
+            currentMac.setText("MAC:"+Macs[cont]);
             try{
                 RootTools.getShell(true).add(commandCapture).waitForFinish();
             }catch (Exception e){
-                sendToast(e.getMessage(),false);
+                e.printStackTrace();
             }
 
         }
     }
 
+    public void addListenerOnCheckbox() {
 
+        check  = (CheckBox) findViewById(R.id.checkBox);
+
+        check.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //is chkIos checked?
+                if (((CheckBox) v).isChecked()) {
+                    random = true;
+                    spinnerMacs.setEnabled(false);
+                }else{
+                    random = false;
+                    spinnerMacs.setEnabled(true);
+                }
+
+            }
+        });
+
+    }
 
 
 
@@ -183,9 +292,15 @@ public class MainActivity extends StreetPass {
 
     public void onTether(View view){
         Button b = (Button)findViewById(R.id.button1);
+
         if(!activate){
+            spinnerMacs.setEnabled(false);
+            check.setEnabled(false);
             Spinner spin = (Spinner)findViewById(R.id.spinner3);
             method = spin.getSelectedItemPosition();
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putInt("method",method);
+            editor.commit();
             setPermission(method);
             b.setText("Stop Riilay");
             activate=true;
@@ -193,9 +308,8 @@ public class MainActivity extends StreetPass {
                 wifiManager.setWifiEnabled(false);
             }
             setWifiTetheringEnabled(true);
-            sendToast("Starting Relay",true);
             spin = (Spinner)findViewById(R.id.spinner);
-            int time = (spin.getSelectedItemPosition() + 1) *60000;
+            int time = (spin.getSelectedItemPosition() + 1) *75000;
             spin = (Spinner)findViewById(R.id.spinner2);
             cont = spin.getSelectedItemPosition();
             myTimer = new Timer();
@@ -208,6 +322,9 @@ public class MainActivity extends StreetPass {
             }, 0,time);
 
         }else{
+            spinnerMacs.setEnabled(true);
+            check.setEnabled(true);
+            check.setChecked(false);
             b.setText("Start Riilay");
             sendToast("Stoping Relay",false);
             myTimer.cancel();

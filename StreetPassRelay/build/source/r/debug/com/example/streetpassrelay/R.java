@@ -28,10 +28,11 @@ public final class R {
         public static final int marginBetween=0x7f050003;
         public static final int marginLeft=0x7f050004;
         public static final int marginSpin=0x7f050005;
-        public static final int marginTop=0x7f050006;
-        public static final int sizespin=0x7f050007;
-        public static final int text_long=0x7f050008;
-        public static final int text_small=0x7f050009;
+        public static final int marginStart=0x7f050006;
+        public static final int marginTop=0x7f050007;
+        public static final int sizespin=0x7f050008;
+        public static final int text_long=0x7f050009;
+        public static final int text_small=0x7f05000a;
     }
     public static final class drawable {
         public static final int background=0x7f020000;
@@ -47,8 +48,10 @@ public final class R {
         public static final int zurce=0x7f02000a;
     }
     public static final class id {
-        public static final int action_settings=0x7f090010;
-        public static final int button1=0x7f09000f;
+        public static final int action_settings=0x7f090012;
+        public static final int button1=0x7f090011;
+        public static final int checkBox=0x7f090010;
+        public static final int currentMac=0x7f09000f;
         public static final int imageButton=0x7f090004;
         public static final int imageButton2=0x7f090007;
         public static final int imageButton3=0x7f090008;
