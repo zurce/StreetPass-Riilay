@@ -1,1 +1,4 @@
-# This is my README
+
+# StreetPass-Riilay-
+Open Source code of the StreetPass Riilay 
+
